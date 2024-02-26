@@ -1,6 +1,6 @@
 class HelloWorld {
     public static void main(String[] args) {
-        String nome; "Vinicius"
+        String nome; "Alifer"
         float valor = 1.2f;
         int idade = 25;
         Integer ano = 40;
