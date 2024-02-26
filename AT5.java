@@ -1,29 +1,29 @@
  public class AT5 {
     public static void main(String[] args) {
         
-        String nomeSmartphone = "Redmi note 8";
-        String marcaSmartphone = "Xaomi";
-        double precoSmartphone = 1200.00;
-        int qtdSmartphone = 50;
+        String nomeSmartphone = "Poco x4 Pro";
+        String marcaSmartphone = "Xiaomi";
+        double precoSmartphone = 2000.00;
+        int qtdSmartphone = 30;
         
         System.out.println("Dados do Smartphone:");
         System.out.println("Nome: " + nomeSmartphone);
         System.out.println("Marca: " + marcaSmartphone);
         System.out.println("Preco: " + precoSmartphone);
-        System.out.println("Estoque: " + qtdSmartphone);
+        System.out.println("Estoque: " + quantSmartphone);
        
        System.out.println(" ");
         
-        String nomeLaptop = "G15";
-        String marcaLaptop = "Dell";
-        double precoLaptop = 5000.00;
+        String nomeLaptop = "aspire5";
+        String marcaLaptop = "Acer";
+        double precoLaptop = 4200.00;
         int qtdLaptop = 10;
         
         System.out.println("Dados do Laptop:");
         System.out.println("Nome: " + nomeLaptop);
         System.out.println("Marca: " + marcaLaptop);
         System.out.println("Preco: " + precoLaptop);
-        System.out.println("Estoque: " + qtdLaptop);
+        System.out.println("Estoque: " + quantLaptop);
         
         System.out.println(" ");
         
