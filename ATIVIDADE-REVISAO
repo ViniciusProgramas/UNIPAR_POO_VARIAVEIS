@@ -1,0 +1,524 @@
+ATIVIDADE 1
+
+package carro;
+
+
+public class carro {
+
+    private String marca;
+    private String modelo;
+    private int ano;
+    private String cor;
+
+
+    public carro(String marca, String modelo, int ano, String cor) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.cor = cor;
+    }
+
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+
+    public void exibirInfo() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Ano: " + ano);
+        System.out.println("Cor: " + cor);
+    }
+
+    public static void main(String[] args) {
+
+        carro carro1 = new carro("Volkswagen ", "Golf GTI", 2024, "Black Piano");
+        carro carro2 = new carro("Chevrolet", "Opala Diplomata", 1992, "Preto");
+
+
+        System.out.println("Informações do carro 1: ");
+        carro1.exibirInfo();
+
+        System.out.println("Informações do crro 2: ");
+        carro2.exibirInfo();
+
+
+        carro1.setModelo("Audi");
+        carro1.setAno(2019);
+        carro1.setCor("preto");
+
+
+        System.out.println("Informações atualizadas do carro 1: ");
+        carro1.exibirInfo();
+
+
+        carro2.setModelo("Jetta");
+        carro2.setAno(2023);
+        carro2.setCor("Preto");
+
+        System.out.println("Informações atualizadas do carro 2: ");
+        carro2.exibirInfo();
+    }
+}
+
+ATIVIDADE 2
+
+package Produto;
+
+import java.util.Scanner;
+
+public class Produto {
+
+
+
+    private String nomeProd;
+    private double preco;
+    private int qtdInicialEstoque;
+
+    public Produto(String nomeProd, double preco, int qtdInicialEstoque) {
+        this.nomeProd = nomeProd;
+        this.preco = preco;
+        this.qtdInicialEstoque = qtdInicialEstoque;
+
+    }
+
+
+    public String getNomeProd() {
+        return nomeProd;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getqtdInicialEstoque() {
+        return qtdInicialEstoque;
+    }
+
+    public void setNomeProd(String nomeProd) {
+        this.nomeProd = nomeProd;
+
+    }
+    public void setPreco(double preco){
+        this.preco = preco;
+    }
+
+    public void setQtdInicialEstoque(int qtdInicialEstoque) {
+        this.qtdInicialEstoque = qtdInicialEstoque;
+    }
+
+    public void exibeInfo(){
+        System.out.println("Nome do Produto: " + nomeProd);
+        System.out.println("Preço do Produto: " + preco);
+        System.out.println("Estoque do Produto: " + qtdInicialEstoque);
+    }
+
+
+    public void adicionarEstoque(int quantidade) {
+            qtdInicialEstoque += quantidade;
+            System.out.println(quantidade + " unidades adicionadas ao estoque do produto ");
+    }
+
+
+    public void removerEstoque(int quantidade) {
+        if (quantidade > 0 && quantidade <= qtdInicialEstoque) {
+            qtdInicialEstoque -= quantidade;
+            System.out.println(quantidade + " unidades removidas do estoque do produto " );
+        } else {
+            System.out.println("Quantidade inválida ou estoque insuficiente. Nenhuma alteração feita no estoque.");
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.println("Digite o nome do produto: ");
+        String nomeProd = scanner.nextLine();
+
+
+        System.out.println("Digite o preço do produto: R$");
+        double preco = scanner.nextDouble();
+
+        System.out.println("Digite a quantidade em estoque do produto: ");
+        int qtdInicialEstoque = scanner.nextInt();
+
+        Produto produto = new Produto(nomeProd, preco, qtdInicialEstoque);
+
+        System.out.println("-------- Infor  mações do produto --------");
+
+        System.out.println("Nome do produto: " + produto.getNomeProd());
+        System.out.println("Preço do porduto: R$" + produto.getPreco());
+        System.out.println("Quantidade em estoque inicial do produto: " + produto.getqtdInicialEstoque());
+
+        System.out.println("");
+
+        System.out.println("Digite quantos produtods você deseja adicionar no estoque: ");
+        int qtdAdicionada = scanner.nextInt();
+        produto.adicionarEstoque(qtdAdicionada);
+        System.out.println("Quantidade de estoque após adicionar: " + produto.getqtdInicialEstoque());
+
+        System.out.println("Digite a quantidade de estoque que foi removida: ");
+        int qtdRemovida = scanner.nextInt();
+        produto.removerEstoque(qtdRemovida);
+        System.out.println("Quantidade de estoque apos a remoção: " + produto.getqtdInicialEstoque());
+
+    }
+}
+
+ATIVIDADE 3
+
+package Produuto;
+
+import java.util.Scanner;
+
+public class Produuto {
+
+    private String nomeProd;
+    private double preco;
+    private int qtdInicialEstoque;
+
+    public Produuto(String nomeProd, double preco, int qtdInicialEstoque) {
+        this.nomeProd = nomeProd;
+        this.preco = preco;
+        this.qtdInicialEstoque = qtdInicialEstoque;
+    }
+
+    public String getNomeProd() {
+        return nomeProd;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getQtdInicialEstoque() {
+        return qtdInicialEstoque;
+    }
+
+    public void setNomeProd(String nomeProd) {
+        this.nomeProd = nomeProd;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public void setQtdInicialEstoque(int qtdInicialEstoque) {
+        this.qtdInicialEstoque = qtdInicialEstoque;
+    }
+
+    public void exibeInfo() {
+        System.out.println("Nome do Produto: " + nomeProd);
+        System.out.println("Preço do Produto: " + preco);
+        System.out.println("Estoque do Produto: " + qtdInicialEstoque);
+    }
+
+    public void adicionarEstoque(int quantidade) {
+        qtdInicialEstoque += quantidade;
+        System.out.println(quantidade + " unidades adicionadas ao estoque do produto ");
+    }
+
+    public void removerEstoque(int quantidade) {
+        if (quantidade > 0 && quantidade <= qtdInicialEstoque) {
+            qtdInicialEstoque -= quantidade;
+            System.out.println(quantidade + " unidades removidas do estoque do produto ");
+        } else {
+            System.out.println("Quantidade inválida ou estoque insuficiente. Nenhuma alteração feita no estoque.");
+        }
+    }
+
+    public void atualizarPreco(double novoPreco) {
+        if (novoPreco >= 0) {
+            this.preco = novoPreco;
+            System.out.println("Preço atualizado para R$" + novoPreco);
+        } else {
+            System.out.println("Preço inválido. Nenhuma alteração feita.");
+        }
+    }
+
+    public void atualizarQuantidade(int novaQuantidade) {
+        if (novaQuantidade >= 0) {
+            this.qtdInicialEstoque = novaQuantidade;
+            System.out.println("Quantidade em estoque atualizada para " + novaQuantidade);
+        } else {
+            System.out.println("Quantidade inválida. Nenhuma alteração feita.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Quantos produtos deseja cadastrar?");
+        int numProdutos = scanner.nextInt();
+
+        Produuto[] produtos = new Produuto[numProdutos];
+
+        for (int i = 0; i < numProdutos; i++) {
+            System.out.println("Digite o nome do produto " + (i + 1) + ": ");
+            String nomeProd = scanner.next();
+
+            System.out.println("Digite o preço do produto " + (i + 1) + ": R$");
+            double preco = scanner.nextDouble();
+
+            System.out.println("Digite a quantidade em estoque do produto " + (i + 1) + ": ");
+            int qtdInicialEstoque = scanner.nextInt();
+
+            produtos[i] = new Produuto(nomeProd, preco, qtdInicialEstoque);
+        }
+
+        for (int i = 0; i < numProdutos; i++) {
+            System.out.println("-------- Informações do produto " + (i + 1) + " --------");
+            produtos[i].exibeInfo();
+            System.out.println();
+        }
+
+        System.out.println("Digite o número do produto que deseja atualizar: ");
+        int numProdutoAtualizar = scanner.nextInt();
+
+        if (numProdutoAtualizar > 0 && numProdutoAtualizar <= numProdutos) {
+            Produuto produtoSelecionado = produtos[numProdutoAtualizar - 1];
+            System.out.println("O que deseja atualizar para o produto " + numProdutoAtualizar + "?");
+            System.out.println("1. Preço");
+            System.out.println("2. Quantidade em estoque");
+            int opcaoAtualizar = scanner.nextInt();
+
+            switch (opcaoAtualizar) {
+                case 1:
+                    System.out.println("Digite o novo preço para o produto " + numProdutoAtualizar + ": R$");
+                    double novoPreco = scanner.nextDouble();
+                    produtoSelecionado.atualizarPreco(novoPreco);
+                    break;
+                case 2:
+                    System.out.println("Digite a nova quantidade em estoque para o produto " + numProdutoAtualizar + ": ");
+                    int novaQuantidade = scanner.nextInt();
+                    produtoSelecionado.atualizarQuantidade(novaQuantidade);
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        } else {
+            System.out.println("Número de produto inválido.");
+
+        }
+        for (int i = 0; i < numProdutos; i++) {
+            System.out.println("-------- Informações do produto " + (i + 1) + " --------");
+            produtos[i].exibeInfo();
+            System.out.println();
+        }
+
+    }
+
+}
+
+ATIVIDADE 4
+
+package Circulo;
+
+import java.util.Scanner;
+
+
+public class Circulo{
+    private double raio;
+    private String cor;
+
+    public Circulo(double raio, String cor) {
+        this.raio = raio;
+        this.cor = cor;
+    }
+
+    public void exibirCaracteristicas() {
+        System.out.println("O Círculo tem um raio de " + raio + " e cor " + cor);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o raio do círculo:");
+        double raio = scanner.nextDouble();
+
+        scanner.nextLine();
+
+        System.out.println("Digite a cor do círculo:");
+        String cor = scanner.nextLine();
+
+        Circulo circulo = new Circulo(raio, cor);
+        circulo.exibirCaracteristicas();
+
+        scanner.close();
+    }
+}
+
+ATIVIDADE 5
+
+package Produtoo;
+
+import java.util.Scanner;
+
+class Produto {
+    private String nome;
+    private double preco;
+    private int qtdInicialEstoque;
+
+
+    public Produto(String nome) {
+        this.nome = nome;
+        this.preco = 0.0;
+        this.qtdInicialEstoque = 0;
+    }
+
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+        this.qtdInicialEstoque = 0;
+    }
+
+
+    public Produto(String nome, double preco, int qtdInicialEstoque) {
+        this.nome = nome;
+        this.preco = preco;
+        this.qtdInicialEstoque = qtdInicialEstoque;
+    }
+
+    public void exibirCaracteristicas() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Preço: R$" + preco);
+        System.out.println("Quantidade inicial em estoque: " + qtdInicialEstoque);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o nome do primeiro produto:");
+        String nomeProduto1 = scanner.nextLine();
+
+        Produto produto1 = new Produto(nomeProduto1);
+        System.out.println("Características do primeiro produto:");
+        produto1.exibirCaracteristicas();
+
+
+        System.out.println("Digite o nome do segundo produto:");
+        String nomeProduto2 = scanner.nextLine();
+        System.out.println("Digite o preço do segundo produto:");
+        double precoProduto2 = scanner.nextDouble();
+
+        Produto produto2 = new Produto(nomeProduto2, precoProduto2);
+        System.out.println("Características do segundo produto:");
+        produto2.exibirCaracteristicas();
+
+
+        System.out.println("Digite o nome do terceiro produto:");
+        scanner.nextLine();
+        String nomeProduto3 = scanner.nextLine();
+        System.out.println("Digite o preço do terceiro produto:");
+        double precoProduto3 = scanner.nextDouble();
+        System.out.println("Digite a quantidade em estoque do terceiro produto:");
+        int quantidadeProduto3 = scanner.nextInt();
+
+
+        Produto produto3 = new Produto(nomeProduto3, precoProduto3, quantidadeProduto3);
+        System.out.println("Características do terceiro produto:");
+        produto3.exibirCaracteristicas();
+
+    }
+}
+
+ATIVIDADE TEÓRICA
+
+1- O que é orientação a objetos e quais são seus princípios fundamentais?
+
+R:  A orientação a objetos é um paradigma de programação que organiza o código em torno de objetos, representando entidades do mundo real.
+    Seus princípios fundamentais são: abstração, encapsulamento, herança e polimorfismo. Esses princípios promovem a modularidade, a reutilização de código e a flexibilidade na construção de sistemas.
+
+2-Quais são as vantagens da orientação a objetos em comparação com paradigmas de programação procedural?
+
+R: Reutilização de código, modularidade, encapsulamento, abstração e polimorfismo.
+   Esses recursos facilitam o desenvolvimento e manutenção do software.
+
+3- Explique o conceito de encapsulamento e como ele é implementado em linguagens de programação orientadas a objetos.
+
+R: O encapsulamento na programação orientada a objetos é o princípio de ocultar os detalhes de implementação de um objeto e fornecer uma interface para interagir com ele. 
+   Isso é feito através do uso de modificadores de acesso, como públicos, privados e protegidos, em atributos e métodos. 
+   O encapsulamento promove segurança, integridade e modularidade do código, facilitando a manutenção.
+
+4- Explique o conceito de classe e objeto em programação orientada a objetos, e como eles estão relacionados.
+
+R: Uma classe é um modelo que define atributos e comportamentos de objetos, enquanto um objeto é uma instância específica dessa classe, representando uma entidade individual.
+  Resumindo , uma classe é a descrição e um objeto é uma  instância específica dessa descrição.
+
+5- Qual é a importância dos construtores e métodos em uma classe em programação orientada a objetos?
+
+R: Construtores e métodos são essenciais na programação orientada a objetos. Os construtores inicializam objetos durante a criação, garantindo um estado consistente.
+   Os métodos definem o comportamento dos objetos, permitindo a execução de ações e funcionalidades específicas.  Eles promovem a encapsulação, modularidade e
+   reutilização de código, facilitando a manutenção do sistema e a criação de hierarquias de classes flexíveis.
+
+6- Quais são as diferenças entre métodos estáticos e métodos de instância em uma classe?
+
+R: Métodos de Instância:
+- Pertencem a instâncias específicas da classe.
+- São chamados em instâncias da classe e têm acesso aos atributos e métodos da instância.
+- Operam em dados específicos de uma instância, podendo modificar o estado interno da instância.
+- São úteis para operações que dependem do estado interno de uma instância.
+
+Métodos Estáticos:
+- Pertencem à classe em si, não a instâncias específicas.
+- Não requerem uma instância para serem chamados e são chamados usando o nome da classe.
+- Não têm acesso aos atributos ou métodos de instância e operam independentemente do estado interno de qualquer instância.
+- São úteis para operações que não dependem do estado interno da instância e podem ser usados como funções de utilidade ou operações que são comuns a todas as instâncias da classe.
+
+7- Como são tratados os conceitos de acoplamento e coesão na orientação a objetos e por que são importantes?
+
+R: Na orientação a objetos, o acoplamento refere-se à interdependência entre classes e o grau em que elas se relacionam, enquanto a coesão refere-se à relação interna dos elementos dentro de uma classe.
+   É essencial manter um baixo acoplamento e alta coesão para promover flexibilidade, reutilização de código e facilidade de manutenção.
+   Isso permite que as partes do sistema sejam modificadas independentemente e facilita a compreensão do código.
+
+8- Qual é o objetivo do metodo main ?
+
+R: O objetivo do método main é o ponto de entrada de um programa Java. Ele é o ponto de partida da execução e é onde o sistema começa a executar o código.
+
+9- Como ocorre a passagem de parâmetros em métodos de uma classe em programação orientada a objetos?
+
+R: Na programação orientada a objetos, os parâmetros são passados para métodos quando são chamados. Existem duas formas principais de passagem de parâmetros:
+ por valor, onde é feita uma cópia do valor original, e por referência, onde é passado um ponteiro para o objeto original na memória.
+ Isso permite que os métodos manipulem dados e objetos de forma eficaz.
+
+10- Qual é a diferença entre os modificadores de acesso "public", "private" e "protected" em uma classe?
+
+R:  Os modificadores de acesso "public", "private" e "protected" controlam a visibilidade dos membros de uma classe. "public" permite acesso de qualquer lugar, 
+    "private" restringe o acesso à própria classe e "protected" permite acesso à própria classe e suas subclasses
+
+11-Qual é a importância da palavra-chave "this" em programação orientada a objetos e como ela é utilizada?
+
+R:  A palavra-chave "this" em programação orientada a objetos é usada para se referir ao objeto atual dentro de uma classe.
+    Ela é importante para acessar membros do objeto, evitar ambiguidades entre variáveis locais e membros da classe,
+    passar o próprio objeto como argumento e em construtores para chamar outros construtores da mesma classe ou inicializar atributos.
